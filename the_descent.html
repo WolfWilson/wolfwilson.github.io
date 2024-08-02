@@ -68,7 +68,10 @@
 
         <section id="movie-frame">
             <div class="movie-play">
-                <iframe src="https://drive.google.com/file/d/1cM9MfRCUKhBdrIMVj-KbSVRsBJ_lJ-M7/preview" allow="autoplay" width="800px" height="480px" frameborder="0" allow="autoplay; encrypted-media; fullscreen" allowfullscreen></iframe>
+                <div class="iframe-container">
+                    <img src="posters/The_descent-0.jpg" alt="Poster Image" class="iframe-poster" onclick="playVideo()">
+                    <iframe id="movie-iframe" src="https://drive.google.com/file/d/1cM9MfRCUKhBdrIMVj-KbSVRsBJ_lJ-M7/preview" allow="autoplay" width="800px" height="480px" frameborder="0" allow="autoplay; encrypted-media; fullscreen" allowfullscreen></iframe>
+                </div>
             </div>
         </section>
     </main>
@@ -100,6 +103,11 @@
             </div>
         </div>
     </footer>
-    <script src="script.js"></script>
+    <script>
+        function playVideo() {
+            document.querySelector('.iframe-poster').style.display = 'none';
+            document.querySelector('#movie-iframe').style.display = 'block';
+        }
+    </script>
 </body>
 </html>

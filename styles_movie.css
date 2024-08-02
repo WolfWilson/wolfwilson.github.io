@@ -1,3 +1,5 @@
+/**/
+
 body {
     font-family: Cambria;
     margin: 0;
@@ -338,10 +340,30 @@ footer {
     font-style: normal;
 }
 
-iframe {
-   
+.iframe-container {
+    position: relative;
+    width: 800px;
+    height: 480px;
+    margin: 0 auto;
+}
+
+.iframe-container img.iframe-poster {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    cursor: pointer;
     border-radius: 15px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    
-    border-image: linear-gradient(to right, #ff7e5f, #feb47b) 1;
 }
+
+.iframe-container iframe {
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: none;
+}
+
