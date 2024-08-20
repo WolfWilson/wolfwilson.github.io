@@ -3,28 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Sitio de Películas</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="styles_movie.css">
-    <link rel="icon" type="image/png" href="src/favicon.png">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>30 Days of Night</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../styles_movie.css">
+    <link rel="icon" type="image/png" href="../src/favicon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cinzel:wght@400..900&family=Holtwood+One+SC&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
-        <a href="index.html" class="header-link">
+        <a href="../index.html" class="header-link">
             <div id="img-header">
-                <img src="src/banner2.webp" alt="Title">
+                <img src="../src/banner2.webp" alt="Title">
             </div>  
             <h1>La Dimensión del Terror</h1>
         </a>
         <nav class="navbar">
             <ul>
-                <li><a href="index.html">Películas</a></li>
-                <!--<li><a href="libros.html">Libros</a></li>
-                <li><a href="comics.html">Comics</a></li-->
+                <li><a href="../index.html">Películas</a></li>
+                <li><a href="../categorias.html">Búsqueda por Géneros</a></li>
                 <li><a href="#contact-form">Pídeme una peli!</a></li>
             </ul>
         </nav>
@@ -32,10 +31,10 @@
     
     <main>
         <section id="movie-detail">
-            <h2 class="movie-title">The Thing (1982)</h2>
+            <h2 class="movie-title">The Descent (2005)</h2>
             <div class="movie-info">
                 <div class="movie-poster">
-                    <img src="posters/thing.jpg" alt="The Thing (1982)">
+                    <img src="../posters/descent_2.jpg" alt="The Descent (2009)">
                     <div class="hover-overlay">
                         <div class="technical-details">
                             <h3>Ficha Técnica:</h3>
@@ -46,14 +45,14 @@
                     </div>
                 </div>
                 <div class="movie-details">
-                    <p><strong>Género:</strong> Suspenso – Sci-fi – Terror</p>
-                    <p><strong>País:</strong> EEUU</p>
-                    <p><strong>Duración:</strong> 109 minutos</p>
+                    <p><strong>Género:</strong> Terror – Aventura</p>
+                    <p><strong>País:</strong> Reino Unido</p>
+                    <p><strong>Duración:</strong> 99 minutos</p>
                     <p><strong>Idioma:</strong> Inglés</p>
-                    <p><strong>Director:</strong> John Carpenter</p>
-                    <p><strong>Guion:</strong> Bill Lancaster</p>
-                    <p><strong>Reparto:</strong> Kurt Russell, Wilford Brimley, T.K. Carter, David Clennon, Keith David, Richard Dysart, Charles Hallahan</p>
-                    <p><strong>Sinopsis:</strong> En una estación experimental remota de la Antártida, un equipo de científicos de investigación estadounidenses ven cómo en su campamento base un helicóptero noruego dispara contra un perro de trineo. Cuando acogen al perro, éste ataca brutalmente tanto a los seres humanos como a los caninos del campamento, y descubren que la bestia, de origen desconocido, puede asumir la forma de sus víctimas... (FILMAFFINITY).</p>
+                    <p><strong>Director:</strong> Neil Marshall</p>
+                    <p><strong>Guion:</strong> Neil Marshall</p>
+                    <p><strong>Reparto:</strong> Shauna Macdonald, Natalie Mendoza, Alex Reid, Saskia Mulder, MyAnna Buring</p>
+                    <p><strong>Sinopsis:</strong> Un año después de un severo trauma emocional, Sarah viaja a Carolina del Norte para pasar unos días explorando unas cuevas con sus amigas; después de descender bajo tierra, las amigas hallan unas pinturas extrañas y evidencias de una expedición anterior, luego descubren que no están solas. Depredadores subterráneos habitan el lugar y a ellos les gusta mucho la carne humana. (wikipedia).</p>
                     <p><a href="https://es.wikipedia.org/wiki/Internet_Movie_Database" target="_blank">ImDB</a></p>
                     <div class="movie-review">
                         <h3>Reseña:</h3>
@@ -68,7 +67,10 @@
 
         <section id="movie-frame">
             <div class="movie-play">
-                <iframe src="https://drive.google.com/file/d/1sxzNYN-x1hiIHU__JBJWkEdB92goOoh2/preview" allow="autoplay" width="800px" height="480px" frameborder="0" allow="autoplay; encrypted-media; fullscreen" allowfullscreen></iframe>
+                <div class="iframe-container">
+                    <img src="../posters/The_descent-0.jpg" alt="Poster Image" class="iframe-poster" onclick="playVideo()">
+                    <iframe id="movie-iframe" src="https://drive.google.com/file/d/1cM9MfRCUKhBdrIMVj-KbSVRsBJ_lJ-M7/preview" allow="autoplay" width="800px" height="480px" frameborder="0" allow="autoplay; encrypted-media; fullscreen" allowfullscreen></iframe>
+                </div>
             </div>
         </section>
     </main>
@@ -100,6 +102,11 @@
             </div>
         </div>
     </footer>
-    <script src="script.js"></script>
+    <script>
+        function playVideo() {
+            document.querySelector('.iframe-poster').style.display = 'none';
+            document.querySelector('#movie-iframe').style.display = 'block';
+        }
+    </script>
 </body>
 </html>

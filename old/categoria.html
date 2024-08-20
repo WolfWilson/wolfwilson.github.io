@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Películas por Género</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles_movie.css">
+    <link rel="stylesheet" href="styles_pagination.css">
+    <link rel="icon" type="image/png" href="src/favicon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cinzel:wght@400..900&family=Holtwood+One+SC&display=swap" rel="stylesheet">
+    <script>
+        // Función para obtener el valor de un parámetro de la URL
+        function getParameterByName(name) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(name);
+        }
+
+        // Función para filtrar las películas por género
+        function filterMoviesByGenre(genre) {
+            const allMovies = [
+                { title: "The Thing (1982)", genre: ["Sci-fi", "Terror", "Criaturas"], poster: "posters/thing.jpg", link: "thing.html" },
+                { title: "Night of the Living Dead (1990)", genre: ["Terror", "Zombies"], poster: "posters/nightofthelivingdead.jpg", link: "nightofthelivingdead.html" },
+                { title: "The Empty Man (2020)", genre: ["Terror", "Suspenso", "Misterio", "Sectas"], poster: "posters/TheEmptyMan_Poster.jpg", link: "the_empty_man.html" },
+                { title: "Incantation (2022)", genre: ["Found Footage", "Terror sobrenatural", "Maldiciones"], poster: "posters/incantation.jpg", link: "incantation.html" },
+                { title: "The Dark and the Wicked (2020)", genre: ["Terror", "Drama", "Maldiciones"], poster: "posters/thedarkandthewicked.jpg", link: "the_dark_and_the_wicked.html" },
+                { title: "Martyrs (2008)", genre: ["Terror", "Sectas", "Gore"], poster: "posters/martyrs.jpg", link: "martyrs.html" },
+                { title: "Cuando acecha la maldad (2023)", genre: ["Terror", "Maldiciones", "Folk"], poster: "posters/Cuando_acecha_la_maldad.jpg", link: "cuando_acecha_la_maldad.html" },
+                { title: "Color Out of Space (2019)", genre: ["Sci-Fi", "Terror"], poster: "posters/colors.jpg", link: "color_out_of_space.html" },
+                { title: "The Descent (2009)", genre: ["Terror", "Criaturas"], poster: "posters/descent.jpg", link: "the_descent.html" },
+                { title: "Los Sin Nombre (1999)", genre: ["Terror", "Thriller", "Sectas"], poster: "posters/lossinnombre.jpg", link: "los_sin_nombre.html" },
+                { title: "The Relic (1995)", genre: ["Terror", "Criaturas"], poster: "posters/THERELIC.jpg", link: "the_relic.html" },
+                { title: "30 Days of Night (2007)", genre: ["Terror", "Vampiros"], poster: "posters/30 days of night poster.jpg", link: "30_days_of_night.html" }
+            ];
+
+            return allMovies.filter(movie => movie.genre.includes(genre));
+        }
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const genre = getParameterByName('genero');
+            const movies = filterMoviesByGenre(genre);
+            const moviesContainer = document.getElementById('movies-container');
+
+            movies.forEach(movie => {
+                const movieElement = `
+                    <div class="poster-box">
+                        <div class="poster-content">
+                            <img src="${movie.poster}" alt="${movie.title}">
+                            <div class="hover-overlay">
+                                <a href="${movie.link}" class="details-button">Ver</a>
+                            </div>
+                        </div>
+                        <div class="poster-info">
+                            <p>${movie.title}</p>
+                        </div>
+                    </div>
+                `;
+                moviesContainer.innerHTML += movieElement;
+            });
+
+            document.getElementById('genre-title').innerText = `Películas de ${genre}`;
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <a href="index.html" class="header-link">
+            <div id="img-header">
+                <img src="src/banner2.webp" alt="Title">
+            </div>  
+            <h1>La Dimensión del Terror</h1>
+        </a>
+        <nav class="navbar">
+            <ul>
+                <li><a href="index.html">Películas</a></li>
+                <li><a href="categorias.html">Categorías</a></li>
+                <li><a href="#contact-form">Pídeme una peli!</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="movies">
+            <h2 id="genre-title">Películas</h2>
+            <div id="movies-container" class="posters-grid"></div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container-footer">
+            <div class="text-footer">&copy; 2024 TP5 By Will™. Todos los derechos reservados.</div>
+            <div class="footer-columns">
+                <div class="link">
+                    <h2>Mis Redes</h2>
+                    <div class="socials">
+                        <a href="https://x.com/WolfWilson86"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.linkedin.com/in/wilson-wolf-330a70257/"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://github.com/WolfWilson/"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                <div id="contact-form" class="formulario">
+                    <h2>Contacto</h2>
+                    <p>Haz tu pedido aquí!:</p>
+                    <form>
+                        <label for="name">Nombre:</label>
+                        <input type="text" id="name" name="name" required>
+                        <label for="email">Correo Electrónico:</label>
+                        <input type="email" id="email" name="email" required>
+                        <label for="message">Mensaje:</label>
+                        <textarea id="message" name="message" rows="3" required></textarea>
+                        <button type="submit">Enviar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

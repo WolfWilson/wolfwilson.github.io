@@ -1,4 +1,4 @@
-/**/
+/*styles_movie.css*/
 
 body {
     font-family: Cambria;
@@ -36,14 +36,6 @@ header {
     position: relative;
     z-index: 2;
     padding: 1rem;
-}
-
-header h1 {
-    margin: 0;
-    color: #dba76b;
-    font-size: 2.5rem;
-    z-index: 1;
-    position: relative;
 }
 
 header ul li a {
@@ -295,7 +287,7 @@ footer {
     background-color: #c4935a;
 }
 
-/* Responsive adjustments */
+/* Responsive adjustments 
 @media (max-width: 768px) {
     .footer-columns {
         flex-direction: column;
@@ -334,10 +326,10 @@ footer {
     }
 }
 
-.yesteryear-regular {
-    font-family: "Yesteryear", cursive;
-    font-weight: 400;
-    font-style: normal;
+*/
+
+iframe {
+    border-radius: 15px;
 }
 
 .iframe-container {
@@ -345,6 +337,7 @@ footer {
     width: 800px;
     height: 480px;
     margin: 0 auto;
+    border-radius: 15px;
 }
 
 .iframe-container img.iframe-poster {
