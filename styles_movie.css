@@ -1,102 +1,18 @@
-/*styles_movie.css*/
 
-body {
-    font-family: Cambria;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    background: radial-gradient(
-        100% 100% at 50% 50%,
-        rgba(252, 252, 252, 1) 12%,
-        rgba(247, 222, 181, 1) 84%,
-        rgba(232, 229, 220, 1) 96%
-    );
-    background-blend-mode: multiply;
-    color: rgb(44, 41, 41);
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-}
-
-header {
-    background-color: black;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-    width: 100%;
-    height: 130px;
-    padding: 1rem 2rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
-
-.header-content {
-    position: relative;
-    z-index: 2;
-    padding: 1rem;
-}
-
-header ul li a {
-    display: inline-block;
-    position: relative;
-    transition: all 0.3s ease;
-}
-
-header ul li a:hover {
-    color: #dba76b;
-    left: 5px;
-}
-
-#img-header {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-    overflow: hidden;
-}
-
-#img-header img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-nav ul {
-    list-style: none;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    margin: 1rem 0 0;
-    position: relative;
-    z-index: 1;
-}
-
-nav ul li {
-    margin: 0 1rem;
-}
-
-nav ul li a {
-    color: white;
-    text-decoration: none;
-    font-size: 1.2rem;
-}
 
 main {
     padding: 2rem;
-    flex: 1;
+    width: 100%;
+    max-width: 800px; /* Mantener dentro de este ancho máximo */
+    margin: 0 auto;
+    box-sizing: border-box;
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 100%;
-    box-sizing: border-box;
 }
 
 #movie-detail {
-    width: 80%;
+    width: 100%;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
@@ -110,20 +26,20 @@ main {
 .movie-info {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
     align-items: flex-start;
 }
 
 .movie-details {
     flex: 1;
     padding-right: 20px;
-    margin-left: 20px; /* Añadir margen izquierdo para crear espacio */
+    margin-left: 20px;
 }
 
-
 .movie-poster {
-    position: relative;
-    width: 380px; /* Ajusta según sea necesario */
-    height: auto;
+    width: 100%;
+    max-width: 380px;
+    margin-bottom: 20px;
 }
 
 .movie-poster img {
@@ -132,46 +48,29 @@ main {
     border-radius: 10px;
 }
 
-.hover-overlay {
+#movie-frame {
+    margin-top: 1rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.movie-play {
+    width: 100%;
+    max-width: 800px;
+    padding-bottom: 56.25%; /* Relación de aspecto 16:9 */
+    position: relative;
+    height: 0;
+    overflow: hidden;
+}
+
+.movie-play iframe {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.7);
-    color: white;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    border-radius: 10px;
-    text-align: center;
-    padding: 20px;
-    box-sizing: border-box;
-}
-
-.movie-poster:hover .hover-overlay {
-    opacity: 1;
-}
-
-.technical-details {
-    font-size: 1rem;
-    line-height: 1.5;
-}
-
-.technical-details h3 {
-    margin: 0;
-    padding-bottom: 10px;
-    font-size: 1.2rem;
-}
-
-#movie-frame {
-    margin-top: 2rem;
-    width: 100%;
-    display: flex;
-    justify-content: center;
+    border-radius: 15px;
 }
 
 footer {
@@ -186,130 +85,11 @@ footer {
     margin-top: auto;
 }
 
-.container-footer {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    max-width: 960px;
-    margin: 0 auto;
-    align-items: flex-start;
-    flex-wrap: wrap;
-}
-
-.text-footer {
-    text-align: center;
-    flex: 1 1 100%;
-    margin-bottom: 1rem;
-}
-
-.footer-columns {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    flex-wrap: wrap;
-}
-
-.link, .formulario {
-    flex: 1 1 45%;
-    margin: 0.5rem;
-}
-
-.socials {
-    display: flex;
-    justify-content: flex-start;
-    margin-top: 0.5rem;
-}
-
-.socials a {
-    display: inline-block;
-    min-height: 40px;
-    width: 40px;
-    background-color: rgb(0, 0, 0);
-    margin: 0 10px;
-    text-align: center;
-    line-height: 40px;
-    border-radius: 50%;
-    color: #c4935a;
-    font-size: 20px;
-}
-
-.link a:hover {
-    color: #ffffff;
-}
-
-.socials a:hover {
-    background-color: #c4935a;
-}
-
-.formulario h2 {
-    margin-top: 0;
-    color: #c4935a;
-}
-
-.link h2 {
-    color: #c4935a;
-    margin-top: 0;
-    margin-left: 30px;
-}
-
-.formulario form {
-    display: flex;
-    flex-direction: column;
-    font-weight: bolder;
-}
-
-.formulario label {
-    margin-top: 0.5rem;
-    font-weight: bold;
-}
-
-.formulario input, .formulario textarea {
-    margin-top: 0.5rem;
-    padding: 0.5rem;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    width: 100%;
-    box-sizing: border-box;
-}
-
-.formulario button {
-    margin-top: 1rem;
-    padding: 0.5rem;
-    background-color: #dba76b;
-    color: #000000;
-    font-weight: bold;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.formulario button:hover {
-    background-color: #c4935a;
-}
-
-/* Responsive adjustments 
+/* Ajustes Responsive */
 @media (max-width: 768px) {
-    .footer-columns {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .link, .formulario {
-        flex: 1 1 100%;
-        margin: 0.5rem 0;
-    }
-
-    nav ul {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .posters-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .poster-box {
-        height: 250px;
+    main {
+        padding: 1rem;
+        max-width: 100%;
     }
 
     .movie-info {
@@ -319,44 +99,14 @@ footer {
 
     .movie-details {
         padding-right: 0;
+        margin-left: 0;
     }
 
     .movie-poster {
-        margin-top: 1rem;
+        max-width: 75%;
+    }
+
+    .movie-play {
+        padding-bottom: 75%; /* Mayor altura para móviles */
     }
 }
-
-*/
-
-iframe {
-    border-radius: 15px;
-}
-
-.iframe-container {
-    position: relative;
-    width: 800px;
-    height: 480px;
-    margin: 0 auto;
-    border-radius: 15px;
-}
-
-.iframe-container img.iframe-poster {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    cursor: pointer;
-    border-radius: 15px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.iframe-container iframe {
-    width: 100%;
-    height: 100%;
-    border-radius: 15px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    display: none;
-}
-
