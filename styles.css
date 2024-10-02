@@ -45,10 +45,12 @@ header h1 {
     z-index: 1;
     position: relative;
     font-family: 'Holtwood One SC';
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
 }
 
 nav ul li a {
     position: relative;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); /* Sombra para el texto */
 }
 
 nav ul li a::after {
