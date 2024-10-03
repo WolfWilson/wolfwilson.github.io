@@ -12,9 +12,11 @@ body {
     );
     background-blend-mode: multiply;
     color: rgb(44, 41, 41);
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+    min-height: 100vh; /* Mantén este valor */
+}
+/*para evitar el desbordamiento horizontal. Esto es útil cuando algún elemento de la página tiene un ancho que provoca desplazamiento no deseado en el eje horizontal.*/
+html, body {
+    overflow-x: hidden; /* Evita el desbordamiento horizontal */
 }
 
 header {
@@ -110,9 +112,11 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 100%;
+    max-width: 1200px; /* Define un máximo para el ancho del contenido */
+    margin: 0 auto; /* Centra el contenido */
     box-sizing: border-box;
 }
+
 
 #movie-posters {
     text-align: center;
@@ -412,4 +416,39 @@ footer {
     color: inherit;
     width: 100%;
     height: 100%;
+}
+
+/* Responsive adjustments for the contact form */
+@media (max-width: 599px) {
+    .formulario {
+        flex: 1 1 100%; /* Asegura que ocupe todo el ancho en pantallas pequeñas */
+        padding: 0 1rem;
+    }
+
+    .formulario input, .formulario textarea {
+        width: 100%;
+        padding: 0.6rem;
+    }
+
+    .formulario button {
+        width: 100%;
+        padding: 0.6rem;
+    }
+}
+
+@media (min-width: 600px) and (max-width: 1023px) {
+    .formulario {
+        flex: 1 1 100%;
+        padding: 0 2rem;
+    }
+
+    .formulario input, .formulario textarea {
+        width: 100%;
+        padding: 0.8rem;
+    }
+
+    .formulario button {
+        width: 100%;
+        padding: 0.8rem;
+    }
 }
