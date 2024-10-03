@@ -288,6 +288,13 @@ footer {
 .socials a:hover {
     background-color: #c4935a;
 }
+/* Ajuste general del formulario para todas las pantallas */
+.formulario {
+    max-width: 500px; /* Define un tamaño máximo para el formulario */
+    margin: 0 auto; /* Centra el formulario en el contenedor */
+    padding: 1.5rem; /* Agrega relleno interno para que no quede pegado a los bordes */
+    box-sizing: border-box; /* Asegura que el padding no aumente el ancho */
+}
 
 .formulario h2 {
     margin-top: 0;
@@ -452,3 +459,4 @@ footer {
         padding: 0.8rem;
     }
 }
+
