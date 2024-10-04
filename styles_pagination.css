@@ -84,3 +84,12 @@
 .pagination a:hover:not(.active) {
     background-color: #ddd;
 }
+
+.poster-content img {
+    transition: transform 0.3s ease-in-out;
+}
+
+.poster-content:hover img {
+    transform: scale(1.1);
+}
+
