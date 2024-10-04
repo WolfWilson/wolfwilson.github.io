@@ -16,6 +16,12 @@ main {
     flex-direction: column;
 }
 
+.movie-review p {
+    text-align: justify; /* Justifica el texto para que ocupe todo el ancho disponible */
+    line-height: 1.6; /* Mantiene un buen espaciado entre líneas */
+}
+
+
 .movie-title {
     text-align: center;
     margin-bottom: 1rem;
@@ -26,6 +32,11 @@ main {
     justify-content: space-between;
     flex-wrap: wrap;
     align-items: flex-start;
+}
+
+.movie-details p {
+    text-align: justify; /* Justifica el texto de la sinopsis */
+    line-height: 1.6;
 }
 
 .movie-details {
