@@ -440,7 +440,7 @@ footer {
         align-items: center;
         padding: 1rem;
     }
-
+    
     header h1 {
         font-size: 20px; /* Tamaño adecuado para móviles */
         margin: 0.5rem 0;
@@ -472,6 +472,38 @@ footer {
         margin: 0.5rem 0;
         text-align: center;
     }
+
+    @media (max-width: 599px) {
+        .footer-columns {
+            flex-direction: column; /* Apilar las columnas verticalmente */
+            align-items: center; /* Centra los elementos */
+        }
+    
+        .link, .formulario {
+            flex: 1 1 100%; /* Asegura que ocupen todo el ancho disponible */
+            margin-bottom: 1rem; /* Añade espacio entre los bloques en móviles */
+            padding: 1rem; /* Añade relleno para que los bloques tengan más espacio */
+        }
+    
+        .formulario form {
+            display: flex;
+            flex-direction: column;
+            width: 100%; /* Asegura que el formulario se ajuste al 100% del contenedor */
+        }
+    
+        .formulario input, .formulario textarea {
+            width: 100%; /* Campos de texto ajustados al 100% del contenedor */
+            margin-bottom: 1rem;
+        }
+    
+        .formulario button {
+            width: 100%; /* Botón ajustado al 100% del ancho disponible */
+            padding: 0.5rem;
+        }
+    }
+    
+
+    
 }
 
 
