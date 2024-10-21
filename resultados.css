@@ -1,0 +1,31 @@
+#results-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.poster-box {
+    width: 200px;
+    text-align: center;
+}
+
+.poster-content img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.details-button {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #dba76b;
+    color: #000;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.details-button:hover {
+    background-color: #c4935a;
+}
