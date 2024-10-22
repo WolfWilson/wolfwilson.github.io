@@ -39,7 +39,12 @@ const allMovies = [
     { title: "Alien: Romulus", title_es: "Alien: Romulus", year: 2024, genre: ["Terror", "Ciencia Ficción", "Aliens"], poster: "posters3/aliens_romulus.jpg", link: "movies3/alien_romulus.html" },
     { title: "V/H/S BEYOND", title_es: "V/H/S Más Allá", year: 2024, genre: ["Terror", "Antología", "Found Footage"], poster: "posters3/vhs_beyond.jpg", link: "movies3/vhs_beyond.html" },
     { title: "The Blob", title_es: "La Mancha Voraz", year: 1988, genre: ["Terror", "Ciencia Ficción", "Criaturas"], poster: "posters3/blob1.jpg", link: "movies3/the_blob.html" },
-    { title: "Little Shop of Horrors: Director's Cut", title_es: "La Tiendita del Horror: Versión del Director", year: 1986, genre: ["Humor Negro", "Criaturas", "Ciencia Ficción"], poster: "posters3/little_shop.jpg", link: "movies3/little_shop_of_horrors.html" }
+    { title: "Little Shop of Horrors: Director's Cut", title_es: "La Tiendita del Horror: Versión del Director", year: 1986, genre: ["Humor Negro", "Criaturas", "Ciencia Ficción"], poster: "posters3/little_shop.jpg", link: "movies3/little_shop_of_horrors.html" },
+    { title: "Return of the Living Dead 3", title_es: "El Regreso de los Muertos Vivientes 3", year: 1993, genre: ["Terror", "Zombies", "Culto"], poster: "posters3/return_of_the_living_dead_3.jpg", link: "movies3/return_of_the_living_dead3.html" }, 
+    { title: "Late Night with the Devil", title_es: "Late Night con el Diablo", year: 2023, genre: ["Terror", "Suspenso",  "Terror sobrenatural", "Misterio"], poster: "posters3/late_night_with_the_devil.jpg", link: "movies3/late_night_with_the_devil.html" }
+
+    
+
 ];
 
 
