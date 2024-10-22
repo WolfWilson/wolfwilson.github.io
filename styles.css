@@ -429,6 +429,12 @@ footer {
 
 @media (max-width: 599px) {
 
+    .poster-info p {
+        margin: 0;
+        font-size: 12px;
+        font-weight: bold;
+    }
+
     nav ul {
         flex-direction: column;
         align-items: center;
