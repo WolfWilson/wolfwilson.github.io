@@ -428,13 +428,6 @@ footer {
 }
 
 @media (max-width: 599px) {
-    header {
-        height: 120px;
-    }
-
-    header h1 {
-        font-size: 20px; /* Ajustado para resoluciones menores */
-    }
 
     nav ul {
         flex-direction: column;
@@ -486,48 +479,81 @@ footer {
     height: 100%;
 }
 
-/* Responsive adjustments for the contact form */
+/*configuracion de vista movil para el header y nav */
 @media (max-width: 599px) {
     header {
-        height: auto; /* Ajusta la altura según el contenido */
+        position: relative;
+        height: 200px;
         display: flex;
+        justify-content: center; /* Centra horizontalmente */
+        align-items: center; /* Centra verticalmente */
         flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        padding: 1rem;
-    }
-    
-    header h1 {
-        font-size: 20px; /* Tamaño adecuado para móviles */
-        margin: 0.5rem 0;
-        text-align: center; /* Centra el texto */
     }
 
     #img-header {
-        width: 100%;
-        height: 200px; /* Ajusta la altura como prefieras o según el diseño */
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        overflow: hidden; /* Asegura que no haya desbordamiento */
-    }
-    
-    #img-header img {
+        position: absolute;
+        top: 0;
+        left: 0;
         width: 100%;
         height: 100%;
-        object-fit: cover; /* Ajusta la imagen para que cubra el contenedor completamente */
-        object-position: center; /* Centra la imagen en el contenedor */
+        object-fit: cover;
+        object-position: center;
+        z-index: 1;
+    }
+
+    header h1 {
+        position: relative;
+        z-index: 2; /* Mantén el título sobre la imagen */
+        color: #dba76b;
+        font-size: 20px;
+        margin: 0; /* Asegura que no haya márgenes laterales */
+        margin-right: 40px;
+        text-align: center; /* Asegura que el texto esté centrado dentro del h1 */
+    }
+
+    /* Para centrar los elementos de la navegación */
+    nav {
+        display: flex;
+        flex-direction: column;
+        justify-content: center; /* Centra los elementos verticalmente */
+        align-items: center; /* Centra los elementos horizontalmente */
+        z-index: 2; /* Mantén los elementos sobre la imagen */
+        margin-right: 40px;
     }
 
     nav ul {
-        flex-direction: column;
+        list-style: none;
         padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Centra los elementos de la lista */
+        gap: 0.5rem; /* Añade un espacio entre los elementos */
     }
 
     nav ul li {
-        margin: 0.5rem 0;
-        text-align: center;
+        margin: 0; /* Elimina márgenes adicionales */
     }
+
+    nav ul li a {
+        color: white;
+        text-decoration: none;
+        font-size: 1.2rem;
+        text-align: center;
+        padding: 0.5rem 1rem;
+        background-color: transparent;
+        transition: background-color 0.3s ease-in-out;
+    }
+
+    nav ul li a:hover {
+        background-color: rgba(219, 167, 107, 0.8); /* Color al pasar el cursor */
+        border-radius: 5px;
+    }
+}
+
+
+
+
 
     @media (max-width: 599px) {
         .footer-columns {
@@ -560,6 +586,6 @@ footer {
     
 
     
-}
+
 
 
