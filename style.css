@@ -201,6 +201,28 @@ body {
     font-size: 2.2rem;
     color: white;
     text-shadow: 0 0 5px var(--pink), 0 0 15px var(--pink);
+    transform: translateZ(1vw);
+    text-transform: uppercase;
+    display: block;
+}
+
+.line-2 {
+    font-family: var(--font-sans);
+    font-size: 3.2rem;
+    line-height: 0.8;
+    background: linear-gradient(5deg, white 10%, var(--blue) 30%, var(--main-background) 50%, white 51%, var(--blue) 75%, var(--main-background) 90%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transform: translateZ(3vw);
+    display: block;
+    width: fit-content;
+    margin: 0 auto;
+}
+
+.line-3 {
+    font-family: var(--font-serif);
+    color: var(--pink);
     font-size: 3.2rem;
     display: block;
     margin-top: -15px;
